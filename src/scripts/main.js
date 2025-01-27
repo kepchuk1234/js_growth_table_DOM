@@ -7,9 +7,9 @@ const removeColumnButton = document.querySelector('.remove-column');
 const table = document.querySelector('.field');
 const tableBody = table.querySelector('tbody');
 const MAX_ROWS = 10;
-const MAX_COLUMN = 10;
+const MAX_COLUMNS = 10;
 const MIN_ROWS = 2;
-const MIN_COLUMN = 2;
+const MIN_COLUMS = 2;
 
 appendRowButton.addEventListener('click', appendRow);
 removeRowButton.addEventListener('click', removeRow);
@@ -54,11 +54,11 @@ function appendColumn(e) {
     tableBodyArr[i].append(newTd);
   }
 
-  if (tableBody.rows[0].cells.length === MAX_COLUMN) {
+  if (tableBody.rows[0].cells.length === MAX_COLUMNS) {
     e.currentTarget.setAttribute('disabled', '');
   }
 
-  if (tableBody.rows[0].cells.length > MIN_COLUMN) {
+  if (tableBody.rows[0].cells.length > MIN_COLUMS) {
     removeColumnButton.removeAttribute('disabled');
   }
 }
@@ -70,11 +70,11 @@ function removeColumn(e) {
     tableBodyArr[i].lastChild.remove();
   }
 
-  if (tableBody.rows[0].cells.length === MIN_COLUMN) {
+  if (tableBody.rows[0].cells.length === MIN_COLUMS) {
     e.currentTarget.setAttribute('disabled', '');
   }
 
-  if (tableBody.rows[0].cells.length < MAX_COLUMN) {
+  if (tableBody.rows[0].cells.length < MAX_COLUMNS) {
     appendColumnButton.removeAttribute('disabled');
   }
 }
