@@ -1,9 +1,9 @@
 'use strict';
 
-const appendRowButtom = document.querySelector('.append-row');
-const removeRowButtom = document.querySelector('.remove-row');
-const appendColumnButtom = document.querySelector('.append-column');
-const removeColumnButtom = document.querySelector('.remove-column');
+const appendRowButton = document.querySelector('.append-row');
+const removeRowButton = document.querySelector('.remove-row');
+const appendColumnButton = document.querySelector('.append-column');
+const removeColumnButton = document.querySelector('.remove-column');
 const table = document.querySelector('.field');
 const tableBody = table.querySelector('tbody');
 const MAX_ROWS = 10;
@@ -11,10 +11,10 @@ const MAX_COLUMN = 10;
 const MIN_ROWS = 2;
 const MIN_COLUMN = 2;
 
-appendRowButtom.addEventListener('click', appendRow);
-removeRowButtom.addEventListener('click', removeRow);
-appendColumnButtom.addEventListener('click', appendColumn);
-removeColumnButtom.addEventListener('click', removeColumn);
+appendRowButton.addEventListener('click', appendRow);
+removeRowButton.addEventListener('click', removeRow);
+appendColumnButton.addEventListener('click', appendColumn);
+removeColumnButton.addEventListener('click', removeColumn);
 
 function appendRow(e) {
   const newRow = tableBody.firstChild.cloneNode(true);
@@ -26,7 +26,7 @@ function appendRow(e) {
   }
 
   if (tableBody.rows.length > MIN_ROWS) {
-    removeRowButtom.removeAttribute('disabled');
+    removeRowButton.removeAttribute('disabled');
   }
 }
 
@@ -40,7 +40,7 @@ function removeRow(e) {
   }
 
   if (tableBody.rows.length < MAX_ROWS) {
-    appendRowButtom.removeAttribute('disabled');
+    appendRowButton.removeAttribute('disabled');
   }
 }
 
@@ -59,7 +59,7 @@ function appendColumn(e) {
   }
 
   if (tableBody.rows[0].cells.length > MIN_COLUMN) {
-    removeColumnButtom.removeAttribute('disabled');
+    removeColumnButton.removeAttribute('disabled');
   }
 }
 
@@ -75,6 +75,6 @@ function removeColumn(e) {
   }
 
   if (tableBody.rows[0].cells.length < MAX_COLUMN) {
-    appendColumnButtom.removeAttribute('disabled');
+    appendColumnButton.removeAttribute('disabled');
   }
 }
