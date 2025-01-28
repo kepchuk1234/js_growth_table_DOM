@@ -31,7 +31,7 @@ function appendRow(e) {
 }
 
 function removeRow(e) {
-  const removedRow = tableBody.lastChild;
+  const removedRow = tableBody.lastElementChild;
 
   removedRow.remove();
 
@@ -67,7 +67,7 @@ function removeColumn(e) {
   const tableBodyArr = [...tableBody.rows];
 
   for (let i = 0; i < tableBodyArr.length; i++) {
-    tableBodyArr[i].lastChild.remove();
+    tableBodyArr[i].lastElementChild.remove();
   }
 
   if (tableBody.rows[0].cells.length === MIN_COLUMS) {
